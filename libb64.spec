@@ -1,6 +1,7 @@
 # TODO
 # - shared library?
 Summary:	Fast Base64 encoding/decoding routines
+Summary(pl.UTF-8):	Szybkie funkcje do kodowania/dekodowania Base64
 Name:		libb64
 Version:	1.2
 Release:	1
@@ -15,17 +16,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Fast Base64 encoding/decoding routines.
 
+%description -l pl.UTF-8
+Szybkie funkcje do kodowania/dekodowania Base64.
+
 %package devel
-Summary:	Header files for %{name} library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
+Summary:	Header files for b64 library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki b64
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files for %{name} library.
+Header files for b64 library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki %{name}.
+Pliki nagłówkowe biblioteki b64.
 
 %prep
 %setup -q
