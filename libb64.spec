@@ -48,9 +48,9 @@ Statyczna biblioteka b64.
 %build
 cd src
 for f in cencode.c cdecode.c ; do
-	libtool --mode=compile %{__cc} %{rpmcflags} %{rpmcppflags} -c $f -o ${f%.c}.lo -I../include
+	libtool --tag=CC --mode=compile %{__cc} %{rpmcflags} %{rpmcppflags} -c $f -o ${f%.c}.lo -I../include
 done
-libtool --mode=link %{__cc} %{rpmldflags} %{rpmcflags} -o libb64.la cencode.lo cdecode.lo -rpath %{_libdir}
+libtool --tag=CC --mode=link %{__cc} %{rpmldflags} %{rpmcflags} -o libb64.la cencode.lo cdecode.lo -rpath %{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
